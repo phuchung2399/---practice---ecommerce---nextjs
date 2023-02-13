@@ -18,6 +18,33 @@ interface AppProps {
   singleProduct: Product;
 }
 
+////////////////////////////////////////////////////////////
+// bg-[#000] bg-[#fff]
+// bg-[#30323C]  bg-[#F4F4E8] bg-[#595E7B]
+// bg-[#181A29]
+
+// bg-[#E6B2B8]  bg-[#2D2C2F] bg-[#BFAA80]  bg-[#455851]
+// bg-[#7BB4B5]  bg-[#FAC0C3] bg-[#D1C2AD]
+// bg-[#E3E2DE]  bg-[#FE37A7] bg-[#2A2A2C]
+// bg-[#E9E7E6]
+// bg-[#46302C]
+// bg-[#121629]  bg-[#B1412C]
+// bg-[#272429]  bg-[#3D3D56]
+// bg-[#6C1F31]
+// bg-[#C1C0C9]  bg-[#D9C8B4]
+// bg-[#94815F]  bg-[#406174] bg-[#6A323F]  bg-[#656D6D]
+// bg-[#F0C1CB]
+// bg-[#F6DFA8]  bg-[#F4F4F4] bg-[#EBEBEB]
+// bg-[#C1AA84]
+// bg-[#37313C]
+
+// bg-[#E1DED5]
+// bg-[#2A346B]
+// bg-[#ddd]
+// bg-[#00FF00]
+// bg-[#ffd500]
+///////////////////////////////////////////////////////////
+
 export default function ClothesSelection({ singleProduct }: AppProps) {
   const [counter, setCounter] = useState(1);
   const [sizeState, setSizeState] = useState<string | undefined>(undefined);
