@@ -82,7 +82,6 @@ export const cartSlice = createSlice({
       state.totalQuantity -= existingItem!.quantity;
       state.totalAmount -= existingItem!.totalPrice;
 
-      // ONLY FILTER IT OUT AFTER CALCULATING ALL THE AMOUNT
       state.items = state.items.filter((item) => item.id !== id);
       state.changed = true;
     },
@@ -90,7 +89,5 @@ export const cartSlice = createSlice({
 });
 
 export const cartActions = cartSlice.actions;
-
-// export const selectCount = (state: RootState) => state.counter.value;
 
 export default cartSlice.reducer;

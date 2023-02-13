@@ -10,7 +10,6 @@ import CartItem from "./CartItem";
 
 export default function CartInfo() {
   const [parent] = useAutoAnimate();
-
   const cartState = useAppSelector((state) => state.cart);
   const router = useRouter();
 

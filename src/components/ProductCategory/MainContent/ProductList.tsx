@@ -17,8 +17,7 @@ interface AppProps {
 export default function ProductList({ productsList }: AppProps) {
   const dispatch = useAppDispatch();
   const [parent] = useAutoAnimate();
-  ///////////////////////////////////////////////////
-  // IS MOBILE
+
   const [windowSize, setWindowSize] = useState<{
     width: number | undefined;
     height: number | undefined;
@@ -50,7 +49,7 @@ export default function ProductList({ productsList }: AppProps) {
       setIsMobile(false);
     }
   }, [windowSize.width]);
-  ///////////////////////////////////////////////////
+
   const PROS_PER_PAGE = isMobile ? 8 : 9;
 
   const getPageResult = (originalProducts: Product[], pageNum: number) => {
@@ -60,8 +59,6 @@ export default function ProductList({ productsList }: AppProps) {
     return originalProducts.slice(start, end);
   };
 
-  ////////////////////////////////////////////////////////////////////////////////////
-  // FILTER BY BRAND
   const [brandFilteredProducts, setbrandFilteredProducts] =
     useState(productsList);
 
@@ -84,8 +81,7 @@ export default function ProductList({ productsList }: AppProps) {
       : productsList;
     setbrandFilteredProducts(brandFilteredProductsCheckFallback);
   }, [selectedBrands, productsList]);
-  ////////////////////////////////////////////////////////////////////////////////////
-  // FILTER BY PRICE
+
   const minPrice = useAppSelector((state) => state.filterPrice.minPrice);
   const maxPrice = useAppSelector((state) => state.filterPrice.maxPrice);
 
@@ -104,8 +100,7 @@ export default function ProductList({ productsList }: AppProps) {
 
   const setNumFilteredPrice = useStore((state) => state.setNumFilteredPrice);
   setNumFilteredPrice(priceFilteredProducts.length);
-  /////////////////////////////////////////////////////////////////////////////////////
-  // FILTER BY STATUS
+
   const selectedStatus = useAppSelector(
     (state) => state.filterStatus.selectedStatus
   );
@@ -145,8 +140,7 @@ export default function ProductList({ productsList }: AppProps) {
     }
     setStatusFilteredProducts(filteredProducts);
   }, [lovedProductIds, selectedStatus, productsList, dispatch, isLoggedIn]);
-  /////////////////////////////////////////////////////////////////////////////////////
-  // FILTER BY SEARCH
+
   const query = useAppSelector((state) => state.filterSearch.query);
   const searchParams = useAppSelector(
     (state) => state.filterSearch.searchParams
@@ -174,9 +168,6 @@ export default function ProductList({ productsList }: AppProps) {
     setSearchFilteredProducts(filteredProductsCheckFallback);
   }, [productsList, query, searchParams]);
 
-  /////////////////////////////////////////////////////////////////////////////////////
-  // INTERSECTION BETWEEN FILTER MODE
-
   const brand_priceFilteredProducts = useMemo(
     () =>
       brandFilteredProducts.filter(
@@ -200,8 +191,7 @@ export default function ProductList({ productsList }: AppProps) {
       ),
     [brand_price_statusFilteredProducts, searchFilteredProducts]
   );
-  ///////////////////////////////////////////////////////////////////////////////////
-  // SORTING
+
   const router = useRouter();
   const sortType = router.query.sort;
   const [sortedProducts, setSortedProducts] = useState(
@@ -242,15 +232,10 @@ export default function ProductList({ productsList }: AppProps) {
   const setNum = useStore((state) => state.setNum);
   setNum(sortedProducts.length);
 
-  ///////////////////////////////////////////////////////////////////////////////////
-  // PAGINATION
-  /////- product lists:
-
   const currentPage = useAppSelector((state) => state.pagination.currentPage);
   const renderedProducts = getPageResult(sortedProducts, currentPage);
 
   useEffect(() => {
-    // When switching between different category page and different filtered mode, reset to first page
     dispatch(PaginationActions.resetFirstPage());
   }, [sortedProducts, dispatch]);
 
@@ -259,10 +244,6 @@ export default function ProductList({ productsList }: AppProps) {
   }, [currentPage, router.pathname]);
 
   if (renderedProducts.length === 0) return <ProductEmpty />;
-
-  //////////////////////////////////////////////////////
-  // PAGINATION
-  /////- page number:
 
   const pageNumbers = [];
   const maxPage = Math.ceil(sortedProducts.length / PROS_PER_PAGE);
@@ -294,8 +275,6 @@ export default function ProductList({ productsList }: AppProps) {
       </button>
     </li>
   ));
-
-  ///////////////////////////////////////////////////////////////////////////////////
 
   return (
     <div>

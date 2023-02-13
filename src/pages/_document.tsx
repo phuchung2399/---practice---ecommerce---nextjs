@@ -9,7 +9,7 @@ import { resetIdCounter } from "react-tabs";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    resetIdCounter(); // This for React-Tab package to work properly in NextJS
+    resetIdCounter();
     const initialProps = await Document.getInitialProps(ctx);
     return initialProps;
   }

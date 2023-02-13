@@ -12,7 +12,6 @@ export default function Header() {
   const userEmail = useStore((state) => state.email);
   const userAvatar = useStore((state) => state.avatar);
   const logout = useStore((state) => state.logout);
-  // const [isDarkMode, toggleDarkMode] = useDarkMode();
 
   return (
     <header
@@ -23,18 +22,6 @@ export default function Header() {
     sm:pt-6
     `}
     >
-      {/* {isDarkMode && (
-        <BsFillSunFill
-          onClick={toggleDarkMode}
-          className="absolute top-3 right-3 text-2xl text-primary-color select-none cursor-pointer"
-        />
-      )}
-      {!isDarkMode && (
-        <BsFillMoonFill
-          onClick={toggleDarkMode}
-          className="absolute top-3 right-3 text-2xl text-primary-color select-none cursor-pointer"
-        />
-      )} */}
       <div className={`flex items-center justify-between  relative mb-14`}>
         {!isLoggedIn && (
           <Link href="/auth" passHref>

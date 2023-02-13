@@ -38,7 +38,7 @@ export default function SignIn() {
 
     setShowModal();
   };
-  // "https://i.ibb.co/CJqGvY6/satthudatinh.jpg",
+  
   useEffect(() => {
     const avatars = [
       "https://i.ibb.co/zrXfKsJ/catface-7.jpg",

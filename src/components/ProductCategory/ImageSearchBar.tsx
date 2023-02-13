@@ -4,7 +4,6 @@ import saleOffImg from "assets/saleOff.png";
 import { useAppDispatch, useAppSelector } from "src/store/redux-toolkit/hooks";
 import React from "react";
 import { filterSearchActions } from "src/store/redux-toolkit/filterSearch";
-import profile from "assets/profile.jpg";
 
 export default function ImageSearchBar() {
   const query = useAppSelector((state) => state.filterSearch.query);
@@ -33,8 +32,6 @@ export default function ImageSearchBar() {
           placeholder="Let me know what product you are looking for..."
           value={query}
           onChange={handleSearch}
-          // Search over 500 beautiful clothes...
-          // You can search by name, by brand, by type...
         />
         <span
           className="

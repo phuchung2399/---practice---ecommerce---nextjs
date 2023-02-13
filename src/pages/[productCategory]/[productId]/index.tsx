@@ -48,7 +48,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const productId = context.params!.productId as string; // TYPE ASSERTION. I'M SO SMART. WHY AM I SO GOOD AT CODING???
+  const productId = context.params!.productId as string;
   const client = await MongoClient.connect(
     `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@vtlshopping.6benmaj.mongodb.net/vtlshopping?retryWrites=true&w=majority`
   );
@@ -60,7 +60,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const allProducts = await productClt.find().toArray();
   client.close();
-  const convertedSingleProducts = JSON.parse(JSON.stringify(singleProduct)); // fix weired error
+  const convertedSingleProducts = JSON.parse(JSON.stringify(singleProduct));
   const convertedAllProducts = JSON.parse(JSON.stringify(allProducts));
 
   return {

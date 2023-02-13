@@ -21,8 +21,7 @@ export default function SimilarProduct({
   const [similarProducts, setSimilarProducts] = useState<Product[]>([]);
   const router = useRouter();
   const dispatch = useDispatch();
-  ///////////////////////////////////////////////////
-  // IS MOBILE
+
   const [windowSize, setWindowSize] = useState<{
     width: number | undefined;
     height: number | undefined;
@@ -54,7 +53,6 @@ export default function SimilarProduct({
       setIsMobile(false);
     }
   }, [windowSize.width]);
-  ///////////////////////////////////////////////////
 
   const swiper = new Swiper(".swiper", {
     modules: [Navigation, Pagination],

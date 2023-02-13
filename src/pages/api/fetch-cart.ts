@@ -24,7 +24,7 @@ export default async function ProductCategory(
     const db = client.db();
     const cartClt = db.collection("cart");
     const cartFetched = await cartClt.findOne();
-    const convertedcartFetched = JSON.parse(JSON.stringify(cartFetched)); // fix weired error
+    const convertedcartFetched = JSON.parse(JSON.stringify(cartFetched));
 
     client.close();
 

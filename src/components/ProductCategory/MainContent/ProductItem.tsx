@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import useStore from "src/store/zustand/useStore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 type AppProps = {
   img: string;
   name: string;

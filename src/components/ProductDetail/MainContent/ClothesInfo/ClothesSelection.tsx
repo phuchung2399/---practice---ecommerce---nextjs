@@ -18,36 +18,6 @@ interface AppProps {
   singleProduct: Product;
 }
 
-////////////////////////////////////////////////////////////
-// THIS COMMENT IS IMPORTANCE, DON'T DELETE IT
-
-// bg-[#000] bg-[#fff]
-// bg-[#30323C]  bg-[#F4F4E8] bg-[#595E7B]
-// bg-[#181A29]
-
-// bg-[#E6B2B8]  bg-[#2D2C2F] bg-[#BFAA80]  bg-[#455851]
-// bg-[#7BB4B5]  bg-[#FAC0C3] bg-[#D1C2AD]
-// bg-[#E3E2DE]  bg-[#FE37A7] bg-[#2A2A2C]
-// bg-[#E9E7E6]
-// bg-[#46302C]
-// bg-[#121629]  bg-[#B1412C]
-// bg-[#272429]  bg-[#3D3D56]
-// bg-[#6C1F31]
-// bg-[#C1C0C9]  bg-[#D9C8B4]
-// bg-[#94815F]  bg-[#406174] bg-[#6A323F]  bg-[#656D6D]
-// bg-[#F0C1CB]
-// bg-[#F6DFA8]  bg-[#F4F4F4] bg-[#EBEBEB]
-// bg-[#C1AA84]
-// bg-[#37313C]
-
-// bg-[#E1DED5]
-// bg-[#2A346B]
-// bg-[#ddd]
-// bg-[#00FF00]
-// bg-[#ffd500]
-
-///////////////////////////////////////////////////////////
-
 export default function ClothesSelection({ singleProduct }: AppProps) {
   const [counter, setCounter] = useState(1);
   const [sizeState, setSizeState] = useState<string | undefined>(undefined);
@@ -59,7 +29,7 @@ export default function ClothesSelection({ singleProduct }: AppProps) {
   const setLoveCount = useStore((state) => state.setLoveCount);
   const isLoggedIn = useStore((state) => !!state.tokenId);
   const incrementHandler = () => {
-    setCounter((prevCounter) => prevCounter + 1); // NOT MUTATE STATE
+    setCounter((prevCounter) => prevCounter + 1);
   };
 
   const decrementHandler = () => {
@@ -268,7 +238,7 @@ export default function ClothesSelection({ singleProduct }: AppProps) {
         )}
         {!singleProduct.availability && `Out of stock`}
       </h3>
-      <div className="flex gap-5">s
+      <div className="flex gap-5">
         <button
           onClick={handleLove}
           className="h-[70px] w-[70px] bg-background-grayfa flex items-center justify-center hover:-translate-y-[2px] transition-all duration-[250ms] rounded-sm active:translate-y-0 active:scale-[.98]"

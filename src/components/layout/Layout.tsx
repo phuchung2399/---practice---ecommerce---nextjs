@@ -8,18 +8,12 @@ import sendCartData, { fetchCartData } from "src/store/redux-toolkit/cartThunk";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import useStore from "src/store/zustand/useStore";
-import { FaFacebookF } from "react-icons/fa";
-import { BsInstagram, BsYoutube } from "react-icons/bs";
 import Link from "next/link";
-import { GrSun } from "react-icons/gr";
-import Image from "next/image";
-import classes from "styles/scrollbar.module.css";
 import "animate.css";
 import { Transition } from "react-transition-group";
-import hangerEmpty from "assets/notFound.png";
 import { AiFillGithub } from "react-icons/ai";
-import { BsFacebook } from "react-icons/bs";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+
 let isInitial = true;
 
 export default function Layout({ children }: AppProps): JSX.Element {
@@ -32,11 +26,7 @@ export default function Layout({ children }: AppProps): JSX.Element {
   const setAvatar = useStore((state) => state.setAvatar);
   const isLoggedIn = useStore((state) => !!state.tokenId);
   const setLovedProductIds = useStore((state) => state.setLovedProductIds);
-  const showHeader =
-    router.pathname === "/auth" || router.pathname === "/" ? false : true;
-  // This showHeader variable is used to decide whether or not to show not only HEADER but also FOOTER, LABELS
-  const totalQuantity = useAppSelector((state) => state.cart.totalQuantity);
-  const cartItems = useAppSelector((state) => state.cart.items);
+  const showHeader = router.pathname === "/auth" || router.pathname === "/" ? false : true;
 
   const nodeRef = useRef(null);
 

@@ -1,4 +1,3 @@
-// Don't really need, can use internal state of react tab
 import { GetState, SetState } from "zustand";
 import { MyState } from "./useStore";
 

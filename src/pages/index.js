@@ -83,7 +83,7 @@ const HomePage = () => {
                 "
                 >
                   <div className="flex gap-3 items-center">
-                    <p>Let's go shopping now</p> <BsFillPlayCircleFill size={25} fill="#ffffff"/>
+                    <p>Let&apos;s go shopping now</p> <BsFillPlayCircleFill size={25} fill="#ffffff"/>
                   </div>
                   <div
                     className="-z-10 bg-[#ffffff33] 
@@ -170,14 +170,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-{
-  /* <div className="hidden">
-        <h1 className="text-white">
-          7:25a.m 3/3/2022 Thi ra la mot giac mo. Lighthouse duy nhat ma toi co,
-          gio la chiec website nay.
-        </h1>
-        <p className="text-white">
-          6:00 9/3/2022 Lai la 1 giac mo dep... em vui ve noi chuyen voi toi
-        </p>
-      </div> */
-}

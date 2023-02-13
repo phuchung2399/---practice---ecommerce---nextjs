@@ -10,7 +10,7 @@ interface AppProps {
 export default function DifferentColor({ singleProduct }: AppProps) {
   const dispatch = useAppDispatch();
   let curImage = useAppSelector((state) => state.image.currentImage);
-  const imageEntries = Object.entries(singleProduct.image); // [[img1: dsadsa],[img2: disjaida]]
+  const imageEntries = Object.entries(singleProduct.image);
 
   const handleClick = (imgUrl: string) => {
     dispatch(imageActions.handleClickImage(imgUrl));

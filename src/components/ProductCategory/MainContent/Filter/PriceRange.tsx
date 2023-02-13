@@ -6,6 +6,7 @@ import { filterPriceActions } from "src/store/redux-toolkit/filterPrice";
 import useStore from "src/store/zustand/useStore";
 
 const GAP = 500;
+
 export const MAX_PRICE = "4000";
 export default function PriceRange() {
   const [minInput, setMinInput] = useState("");
@@ -29,7 +30,6 @@ export default function PriceRange() {
   };
 
   useEffect(() => {
-    // DEFAULT VALUE INPUT
     const DEFAULT_MIN_VAL = "500";
     const DEFAULT_MAX_VAL = "1500";
 

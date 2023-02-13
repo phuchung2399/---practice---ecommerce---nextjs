@@ -1,7 +1,7 @@
 import axios from "axios";
-import Cart from "src/model/Cart";
 import { AppDispatch } from "./store";
 import { cartActions, CartState } from "./cartSlice";
+
 export default function sendCartData(cart: CartState) {
   return async (dispatch: AppDispatch) => {
     try {
@@ -11,7 +11,7 @@ export default function sendCartData(cart: CartState) {
         totalAmount: cart.totalAmount,
       });
     } catch (error: any) {
-      console.error(`${error.message} `);
+      console.error(`${error.message}`);
     }
   };
 }
@@ -28,6 +28,7 @@ export function fetchCartData() {
           totalQuantity: data.convertedcartFetched.totalQuantity,
         })
       );
+
     } catch (error: any) {
       console.error(`${error.message}`);
     }

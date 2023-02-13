@@ -8,33 +8,6 @@ import { saveState } from "@/components/common/browser-storage";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  //////////////////////////////////////////////////////////////////////
-  /////////////////////BAR_PROCESS/////////////////////////////////////
-  // import NProgress from "nprogress";
-  // import "styles/nprogress.css";
-  // import { useEffect } from "react";
-  // import { useRouter } from "next/router";
-  // const router = useRouter();
-
-  // useEffect(() => {
-  //   const handleStart = (url: string) => {
-  //     NProgress.start();
-  //   };
-  //   const handleStop = () => {
-  //     NProgress.done();
-  //   };
-
-  //   router.events.on("routeChangeStart", handleStart);
-  //   router.events.on("routeChangeComplete", handleStop);
-  //   router.events.on("routeChangeError", handleStop);
-
-  //   return () => {
-  //     router.events.off("routeChangeStart", handleStart);
-  //     router.events.off("routeChangeComplete", handleStop);
-  //     router.events.off("routeChangeError", handleStop);
-  //   };
-  // }, [router]);
-  //////////////////////////////////////////////////////////////////////
 
   store.subscribe(
     debounce(() => {
@@ -57,7 +30,3 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp;
-
-// async redirects() {
-//   return [{ source: "/", destination: "/men", permanent: false }];
-// },

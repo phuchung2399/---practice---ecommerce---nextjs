@@ -23,14 +23,12 @@ export const paginationSlice = createSlice({
     incrementPage: (state, action: PayloadAction<number>) => {
       const maxPage = action.payload;
       if (state.currentPage < maxPage) state.currentPage++;
-      // otherwise, do nothing
     },
 
     decrementPage: (state) => {
       if (state.currentPage > 1) {
         state.currentPage--;
       }
-      // otherwise, do nothing
     },
   },
 });

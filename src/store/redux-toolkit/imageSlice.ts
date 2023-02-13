@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Cart from "src/model/Cart";
 
 export interface ImageState {
   currentImage: string;

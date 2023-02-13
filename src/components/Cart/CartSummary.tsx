@@ -10,6 +10,7 @@ import thankU from "assets/thankYouOrder.png";
 import Image from "next/image";
 import { Transition } from "react-transition-group";
 import "animate.css";
+
 const PROMOCODE = [
   "111",
   "222",
@@ -53,7 +54,6 @@ export default function CartSummary() {
     promoFee = +promo[0] * 10;
   }
 
-  // DEDRIVING STATE
   const finalPrice = cartState.totalAmount + shippingFee - promoFee;
 
   const isLoggedIn = useStore((state) => !!state.tokenId);

@@ -11,8 +11,8 @@ export default function ProductCategoryPage({ products }: AppProps) {
   return (
     <>
       <Meta
-        title="Lighthouse | Category"
-        description="Lighthouse were my everything."
+        title="VTLShopping | Category"
+        description="VTLShopping were my everything."
         image="/preview.png"
       />
       <ProductCategory productsList={products} />;
@@ -56,7 +56,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     .toArray();
 
   client.close();
-  const convertedProducts = JSON.parse(JSON.stringify(correspondingProducts)); // fix weired error
+  const convertedProducts = JSON.parse(JSON.stringify(correspondingProducts));
 
   return {
     props: {

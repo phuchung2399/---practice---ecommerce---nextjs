@@ -18,8 +18,8 @@ export default function LoginPage() {
   return (
     <>
       <Meta
-        title="Lighthouse | Authentication"
-        description="Lighthouse were my everything."
+        title="VTLShopping | Authentication"
+        description="VTLShopping were my everything."
         image="/preview.png"
       />
       <Auth />;
