@@ -1,0 +1,10 @@
+# .dockerignore
+
+# Ignore development and build files
+**/.git
+**/.next
+**/node_modules
+
+# Ignore other unnecessary files
+.DS_Store
+npm-debug.log
