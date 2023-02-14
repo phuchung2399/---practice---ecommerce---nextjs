@@ -49,7 +49,7 @@ export default function ClothesInfo({ singleProduct }: AppProps) {
         </ul>
         <ClothesSelection singleProduct={singleProduct} />
       </div>
-      <Tabbed singleProduct={singleProduct} />
+      <Tabbed />
     </div>
   );
 }

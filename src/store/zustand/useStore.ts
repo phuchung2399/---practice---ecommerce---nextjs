@@ -1,5 +1,4 @@
 import create from "zustand";
-import createIndexTabSlice, { IndexTabSlice } from "./createIndexTabSlice";
 import createShowModalSlice, { ShowModalSlice } from "./createShowModalSlice";
 import createIsSignInSlice, { IsSignInSlice } from "./createIsSignInSlice";
 import createAuthSlice, { AuthSlice } from "./createAuthSlice";
@@ -9,8 +8,7 @@ import createNumFilteredPriceSlice, {
 } from "./createNumFilteredPriceSlice";
 import createNumSlice, { NumSlice } from "./createNumSlice";
 
-export type MyState = IndexTabSlice &
-  ShowModalSlice &
+export type MyState = ShowModalSlice &
   IsSignInSlice &
   AuthSlice &
   LoveCountSlice &
@@ -18,7 +16,6 @@ export type MyState = IndexTabSlice &
   NumSlice;
 
 const useStore = create<MyState>((set, get) => ({
-  ...createIndexTabSlice(set, get),
   ...createShowModalSlice(set, get),
   ...createIsSignInSlice(set, get),
   ...createAuthSlice(set, get),

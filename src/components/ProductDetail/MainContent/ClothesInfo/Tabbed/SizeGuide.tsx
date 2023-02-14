@@ -1,6 +1,6 @@
 export default function SizeGuide() {
   return (
-    <div className="grid grid-cols-6 place-items-center pt-[20px] text-black font-normal mb-10">
+    <div className="grid grid-cols-6 place-items-center text-black font-normal mb-10">
       <div className="col-span-2 h-[46px]"></div>
       <div className="font-medium">S</div>
       <div className="font-medium">M</div>
