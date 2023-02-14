@@ -135,7 +135,7 @@ export default function ProductList({ productsList }: AppProps) {
       filteredProducts = limitedProducts;
     } else if (selectedStatus === "loved") {
       filteredProducts = lovedProducts;
-    } else if (selectedStatus === "no filter") {
+    } else if (selectedStatus === "All") {
       filteredProducts = productsList;
     }
     setStatusFilteredProducts(filteredProducts);

@@ -33,7 +33,7 @@ export default function AccordionCategory() {
       },
       {
         id: 4,
-        title: "No filter",
+        title: "All",
         quantity: "",
       },
     ];
